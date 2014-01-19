@@ -3,8 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <title>Luis Manuel Ramírez Vargas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="app/libs/md5.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
+
+<script type="text/x-handlebars" data-template-name="application">
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {{#link-to 'index' class="navbar-brand"}}Portfolio{{/link-to}}
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Link</a></li>
+                <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="container">
+        {{outlet}}
+    </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="components/gravatar-image">
+    <img {{bind-attr src=gravatarUrl}}>
+</script>
+
+<script type="text/x-handlebars" data-template-name="index" >
+    <div class="page-header">
+        <h1>Luis Manuel <small>Portfolio</small></h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#" class="thumbnail">
+                        {{gravatar-image email="luis.manuel.ramirez.91@gmail.com" size="220"}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Tweets</div>
+                <div class="panel-body">
+                    Tweets...
+                </div>
+                <div class="panel-footer"><a href="https://twitter.com/LuisMDeveloper">@LuisMDeveloper</a></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="contact">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#" class="thumbnail">
+                    {{gravatar-image email="luis.manuel.ramirez.91@gmail.com" size="223"}}
+                </a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="app/libs/jquery.min.js"></script>
+<script src="app/libs/handlebars.min.js"></script>
+<script src="app/libs/ember.js"></script>
+<script src="app/app.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 
 </body>
 </html>
